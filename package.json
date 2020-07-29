@@ -1,0 +1,25 @@
+{
+  "name": "fac-eh-Server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rajakumardev/fac-eh-Server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rajakumardev/fac-eh-Server/issues"
+  },
+  "homepage": "https://github.com/Rajakumardev/fac-eh-Server#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node": "^14.5.0",
+    "socketio": "^1.0.0"
+  }
+}
