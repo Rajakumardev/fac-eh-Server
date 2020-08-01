@@ -8,11 +8,17 @@ const {v4: uuidV4} = require('uuid');
 */
 router.get("/createroom",(req,res)=>{
     //generate a UUID (roomid) and send as response
-    const roomid = uuidV4();
-    res.json({
-        msg:"Room Created Successfully.",
-        roomid:roomid
-    });
+    try{
+        const roomid = uuidV4();
+        return res.status(200).json({
+            msg:"Room Created Successfully.",
+            roomid:roomid
+        });
+    }catch(err){
+        return res.status(500).json({
+            msg:"internal server error"
+        });
+    }
 });
 
 /*
