@@ -5,10 +5,10 @@ const dotenv = require('dotenv').config(); //import dotenv and parse ".env" file
 const app = express();//init express app
 const PORT = process.env.PORT || 3000; //read port from .env && fallback to 3000 if .env is not configured
 const {roomRoutes} = require('./src/routes/roomRoutes');
-const cors = require('cors');
 
-//middlwares
-app.use(cors());
+//cors middleware config
+require('./src/middlewares/cors').config(app);
+
 
 //init routes
 app.use('/apiv1/',roomRoutes);
