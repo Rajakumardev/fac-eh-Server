@@ -1,5 +1,5 @@
 const router = require('express').Router();
-
+const {v4: uuidV4} = require('uuid');
 
 /*
 @@ route    : /apiv1/createroom
@@ -8,9 +8,10 @@ const router = require('express').Router();
 */
 router.get("/createroom",(req,res)=>{
     //generate a UUID (roomid) and send as response
+    const roomid = uuidV4();
     res.json({
         msg:"Room Created Successfully.",
-        roomid:"J3KijaaJJljer23lkjfa"
+        roomid:roomid
     });
 });
 
