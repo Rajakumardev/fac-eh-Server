@@ -3,9 +3,7 @@
 module.exports = {
     config: (io) =>{
         var whiteList = [process.env.CLIENT_URL];
-        console.log("config sock cors");
         io.origins((origin, callback) => {
-            console.log(origin);
             if(whiteList.indexOf(origin) !== -1){
                 callback(null,true);
             }else{

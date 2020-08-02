@@ -7,8 +7,15 @@ module.exports = (app) => {
     const io = socketIo(server);
     require('../middlewares/socketCors').config(io);
     //socket endpoints
-    io.on('connected',(socket) =>{
-        console.log("New Connection");
+    io.on('connect',(client) =>{
+        //socket join room
+        client.on('join',(data)=>{
+            //join the room
+            client.join(data.roomid);
+            io.in(data.roomid).emit('NewUserJoined',{
+                displayName:data.displayName
+            })
+        })
     })
     return server;
 }
