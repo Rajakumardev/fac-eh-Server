@@ -12,7 +12,7 @@ module.exports = (app) => {
         client.on('join',(data)=>{
             //join the room
             client.join(data.roomid);
-            io.in(data.roomid).emit('NewUserJoined',{
+            io.in(data.roomid).emit('broadcast',{
                 displayName:data.displayName
             })
         })
